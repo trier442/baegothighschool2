@@ -40,7 +40,7 @@ button,input{font:inherit}.wrap{max-width:1240px;margin:auto;padding:24px}.hero{
 <section id="wrongbook" class="wrongbook panel"><h2>오답노트</h2><div id="wrongList"></div></section>
 </main>
 </div>
-<div class="footer">배곧고 2학년 국어 시험 대비 · 학습용 변형문항</div>
+<div class="footer">배곧고 2학년 2학기 1차 정기시험 대비</div>
 </div>
 <button class="float-wrong" onclick="document.getElementById('wrongbook').scrollIntoView()">오답 <span id="wrongCount">0</span></button>
 <script>
@@ -525,15 +525,15 @@ function renderHead(){
  "<h2>"+esc(c.title)+"</h2>"+
  "<div class='meta'><span>"+esc(c.area)+"</span><span>20문항</span><span>정답 "+p.correct+" / 응답 "+p.answered+"</span></div>"+
  "<div class='summary'>"+esc(c.summary)+"</div>"+
- "<div class='source-note"+(c.warn?" warn":"")+"'>자료 기준: "+esc(c.source)+"</div>"+
+
  "<div class='progress'><div class='progress-line'><span>진행률</span><span>"+pct+"%</span></div><div class='bar'><span style='width:"+pct+"%'></span></div></div>";
 }
 function renderPassage(){
  const c=chapterMap[current],box=document.getElementById("passageBox");
  if(c.sourceReady){
-   box.innerHTML="<section class='passage-card'><h3>제시문 전문</h3><div class='passage-note'>먼저 제시문 전체를 읽은 뒤 아래 20문항을 풀도록 구성했습니다.</div><div class='passage-text'>"+esc(c.passage)+"</div></section>";
+   box.innerHTML="<section class='passage-card'><h3>제시문</h3><div class='passage-text'>"+esc(c.passage)+"</div></section>";
  }else{
-   box.innerHTML="<div class='missing-source'><b>학교 원문 자료가 아직 없습니다.</b><br>이 챕터는 문제보다 제시문이 먼저 제시되어야 하므로, 현재는 문항을 잠시 비활성화했습니다. 학교의 기사문/정보 전달 글쓰기 문제·이론 학습지를 추가하면 원문 전문을 넣고 20문항을 다시 연결할 수 있습니다.</div>";
+   box.innerHTML="<div class='missing-source'><b>제시문 준비 중</b></div>";
  }
 }
 function renderQuestions(){
